@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>largest number</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col col-10 col-sm-10 col-lg-10 col-md-9 col-xl-9">
+                <form>
+                    <h1>find the largest number </h1>
+                    <tr>
+                        <td>NUMBER1</td>
+                        <td><input type="text" id="nu1" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>NUMBER2</td>
+                        <td><input type="text" id="nu2" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>NUMBER3</td>
+                        <td><input type="text" id="nu3" class="form-control"></td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><button type="button" class="btn btn-secondary" onclick="largest()">FIND</button></td>
+                    </tr>
+                    <tr>
+                        <td><p id="result"></p></td>
+                    </tr>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+         function largest()
+       {
+            var x=parseInt(document.getElementById("nu1").value);
+            var y=parseInt(document.getElementById("nu2").value);
+            var z=parseInt(document.getElementById("nu3").value);
+            if(x>=y)
+                {
+                    if(x>y)
+                        {
+                            if(x>=z)
+                                {
+                                    if(x>z)//x>y;x>z;x is the largest
+                                        {
+                                            document.getElementById("result").innerHTML=x+" is the largest number.";
+                                        }
+                                    else//x>y;x=z;x and z are equel.x is the largest.
+                                        {
+                                            document.getElementById("result").innerHTML=x+" is the largest number.";  
+                                        }
+                                }
+                            else//x>y;x<z;z is the largest
+                                {
+                                    document.getElementById("result").innerHTML=z+" is the largest number.";   
+                                }
+                        
+                        }
+                    else//x=y;
+                        {
+                            if(x>=z)//x=y;
+                                {
+                                    if(x>z)//x=y;x>z;x is the largest
+                                        {
+                                            document.getElementById("result").innerHTML=x+" is the largest number.";
+                                        }
+                                    else//x=y;x=z;x,y,z are equel.
+                                        {
+                                            document.getElementById("result").innerHTML="all are equel"  
+                                        }
+                                }
+                            else//x=y;x<z;z is the largest
+                                {
+                                    document.getElementById("result").innerHTML=z+" is the largest number.";   
+                                } 
+                        }
+                }       
+            else//x<y;
+                {
+                    if(x>=z)//x<y;
+                                {
+                                    if(x>z)//x<y;x>z;y is the largest
+                                        {
+                                            document.getElementById("result").innerHTML=y+" is the largest number.";
+                                        }
+                                    else//x<y;x=z;y is the largest
+                                        {
+                                            document.getElementById("result").innerHTML=y+" is the largest number.";  
+                                        }
+                                }
+                            else//x<y;x<z;
+                                {
+                                    if(y>=z)//x<y;y>=z
+                                        {  
+                                             if(y>z)//x<y;y>z;y is the largest
+                                             {
+                                            document.getElementById("result").innerHTML=y+" is the largest number.";
+                                             }
+                                            else//x<y;y=z;y is the largest
+                                             {
+                                            document.getElementById("result").innerHTML=y+" is the largest number.";  
+                                            }
+                                        }    
+                                                                                         
+                                    else //x<y;y<z;z is the largest
+                                        {
+                                            document.getElementById("result").innerHTML=z+" is the largest number.";  
+                                        } 
+                                       
+                                }    
+                }
+         };
+    </script>
+</body>
+</html>
